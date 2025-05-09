@@ -22,7 +22,7 @@ export const NavBar = ({
               to={item.route}
               className={({ isActive }) =>
                 isActive
-                  ? `nav-bar__${element} nav-bar__${element}--${modifier} grown grown--active`
+                  ? `nav-bar__${element} nav-bar__${element}--${modifier} nav-bar__${element}--selected grown grown--active`
                   : `nav-bar__${element} nav-bar__${element}--${modifier} grown`
               }
             >

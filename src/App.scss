@@ -1,15 +1,22 @@
 @use "./styles/reset.module";
+@use "./styles/root.module";
 @use "./styles/font_face.module";
 @use "./styles/animation.module" as animated;
 @use "./components/header/Header.module";
 @use "./components/logo/Logo.module";
 @use "./components/nav-bar/NavBar.module";
+@use "./components/footer/Footer.module";
+@use "./components/icon/Icon.module";
 
 * {
   font-family: Mont, sans-serif !important;
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--background-color);
+}
+
 .grown {
-  @include animated.underline__grown;
+  @include animated.underline-grown;
 }

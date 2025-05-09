@@ -17,3 +17,33 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 24px;
+  }
+
+  @include on-desktop {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+@mixin page-grid {
+  --columns: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 16px;
+  row-gap: 32px;
+
+  @include on-tablet {
+    --columns: 12;
+    gap: 24px;
+  }
+
+  @include on-desktop {
+    --columns: 24;
+  }
+}

@@ -1,0 +1,50 @@
+:root {
+  --color-primary: #313237;
+  --color-secondary: #89939a;
+  --color-icons: #b4bdc3;
+  --color-elements: #e2e6e9;
+  --color-hover: #fafbfc;
+  --color-shadow: #172031;
+  --color-white: #ffffff;
+  --color-green: #27ae60;
+  --color-red: #eb5757;
+
+  --background-color: var(--color-white);
+  --common-shadow: var(--color-elements);
+  --header-icon-border: var(--color-elements);
+  --icon-primary-color: var(--color-primary);
+  --link-active-color: var(--color-primary);
+  --link-secondary-color: var(--color-secondary);
+  --link-footer: var(--color-secondary);
+  --footer-message: var(--color-secondary);
+  --footer-icon-background: var(--color-white);
+  --footer-icon-border: var(--color-icons);
+  --counter-border: var(--color-white);
+  --link-footer: var(--color-secondary);
+}
+
+:root[data-theme="dark"] {
+  --color-secondary: #75767f;
+  --color-icons: #4a4d58;
+  --color-elements: #3b3e4a;
+  --color-surface: #161827;
+  --color-surface-2: #323542;
+  --color-black: #0f1121;
+  --color-white: #f1f2f9;
+  --color-accent: #985cfc;
+  --color-hover: #a378ff;
+  --color-bg: #101424;
+
+  --background-color: var(--color-black);
+  --common-shadow: var(--color-surface-2);
+  --header-icon-border: var(--color-surface-2);
+  --icon-primary-color: var(--color-white);
+  --link-active-color: var(--color-white);
+  --link-secondary-color: var(--color-secondary);
+  --link-footer: var(--color-white);
+  --footer-message: var(--color-secondary);
+  --footer-icon-background: var(--color-surface-2);
+  --footer-icon-border: var(--color-surface-2);
+  --counter-border: var(--color-black);
+  --link-footer: var(--color-white);
+}

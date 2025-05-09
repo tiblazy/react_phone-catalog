@@ -7,7 +7,7 @@ export const MenuToggle = () => {
 
   return (
     <button
-      className="icon icon--header header--menu"
+      className="icon icon--header icon--menu"
       onClick={handleShownMenuState}
     >
       {shownMenuState ? <IoClose /> : <IoMenu />}

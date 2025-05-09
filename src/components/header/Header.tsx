@@ -4,17 +4,19 @@ import { Item, NavBar } from '../nav-bar';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { FiShoppingBag } from 'react-icons/fi';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { MdFavoriteBorder } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import { ProductDto } from '../../dtos/ProductDto';
 import { MenuToggle } from '../menu-toggle/meu-toggle';
 import { ThemeToggle } from '../theme-toggle';
 
 export const Header = () => {
-  const counter = 0;
+  const counter = 2;
   const { products } = useProductsContext();
 
   const categories = [
-    ...new Set(products.map(product => product.category)),
+    ...new Set(products.map((product: ProductDto) => product.category)),
   ].map(category => {
     return { name: category, route: category };
   });
@@ -30,7 +32,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="header">
+    <header className="header" id="header">
       <nav className="nav-bar nav-bar--space-between">
         <div className="nav-bar">
           <Logo modifier={'header'} />

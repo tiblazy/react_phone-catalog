@@ -25,12 +25,15 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     localStorage.setItem('#mate--catalog-phone', theme);
+    document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   const handleToggleTheme = () => {
     localStorage.setItem('#mate--catalog-phone', theme);
 
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+
+    document.documentElement.setAttribute('data-theme', theme);
   };
 
   return (

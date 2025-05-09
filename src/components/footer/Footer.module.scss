@@ -1,2 +1,36 @@
+@use "../../styles/layout.module" as layout;
+
 .footer {
+  padding-block: 32px;
+  box-shadow: 0px -1px 0px 0px var(--common-shadow);
+
+
+  &__container {
+    @include layout.content-padding-inline;
+    @include layout.page-grid;
+  }
+
+  &__top {
+    grid-column: 2/-2;
+    gap: 8px;
+
+    @include layout.flex-center;
+
+    @include layout.on-tablet {
+      grid-column: span 4;
+      place-content: end;
+    }
+
+    @include layout.on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &__message{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--footer-message);
+  }
 }

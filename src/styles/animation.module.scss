@@ -1,6 +1,6 @@
 $default-transition: 0.3s ease-in-out;
 
-@mixin underline__grown {
+@mixin underline-grown {
   &::after {
     content: "";
     position: absolute;
@@ -8,15 +8,28 @@ $default-transition: 0.3s ease-in-out;
     bottom: 0;
     height: 2px;
     width: 0;
-    background-color: red;
+    background-color: var(--link-active-color);
     transition: width $default-transition;
   }
 
-  &:hover:after {
+  &:hover::after {
     width: 100%;
   }
 
-  &--active:after {
+  &--active::after {
     width: 100%;
   }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(4px);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+@mixin move-up {
+  animation: slide-up 0.5s infinite ease-in-out forwards;
 }

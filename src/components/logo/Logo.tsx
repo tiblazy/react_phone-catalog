@@ -1,20 +1,24 @@
 import { useNavigate } from 'react-router-dom';
+import { useThemeContext } from '../../hooks/useThemeContext';
 import logoDark from '/img/logo-dark.png';
 import logoLight from '/img/logo-light.png';
 
-type Theme = 'light' | 'dark';
 type Props = {
   modifier?: 'header' | 'footer';
 };
 
 export const Logo = ({ modifier }: Props) => {
-  const theme: Theme = 'light';
-  const themeBased: string = theme === 'light' ? logoLight : logoDark;
+  const { theme } = useThemeContext();
+
   const navigate = useNavigate();
 
   return (
     <button className={`logo logo--${modifier}`} onClick={() => navigate('/')}>
-      <img className="logo__image" src={themeBased} alt={themeBased} />
+      <img
+        className="logo__image"
+        src={theme === 'light' ? logoLight : logoDark}
+        alt={theme === 'light' ? logoLight : logoDark}
+      />
     </button>
   );
 };

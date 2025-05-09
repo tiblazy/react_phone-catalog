@@ -1,0 +1,66 @@
+@use "../../styles/variables.module" as variables;
+@use "../../styles/layout.module" as layout;
+@use "../../styles/animation.module" as animated;
+
+.icon {
+  position: relative;
+  aspect-ratio: 1;
+  color: var(--icon-primary-color);
+
+  @include layout.flex-center;
+
+  &--header {
+    height: variables.$header--mobile;
+    border-left: 1px solid var(--header-icon-border);
+
+    @include layout.on-desktop {
+      height: variables.$header--desktop;
+    }
+  }
+
+  &--navigation {
+    display: none;
+
+    @include layout.on-tablet {
+      @include layout.flex-center;
+    }
+  }
+
+  &--menu {
+    @include layout.on-tablet {
+      display: none;
+    }
+  }
+
+  &--footer {
+    height: 32px;
+    background-color: var(--footer-icon-background);
+    border: 1px solid var(--footer-icon-border);
+
+    &:hover {
+      & > * {
+        @include animated.move-up;
+      }
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-60%, 60%);
+    width: 14px;
+    aspect-ratio: 1/1;
+    color: var(--color-white);
+    background-color: var(--color-red);
+    border-radius: 100%;
+    border: 1px solid var(--counter-border);
+    font-size: 9px;
+
+    @include layout.flex-center;
+
+    @include layout.on-desktop {
+      transform: translate(-110%, 120%);
+    }
+  }
+}

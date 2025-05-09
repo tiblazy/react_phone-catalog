@@ -1,12 +1,28 @@
+@use "../../styles/layout.module" as layout;
+
 .logo {
+  height: 32px;
+  display: flex;
+  align-self: center;
 
   &--header {
-    height: 32px;
     padding-inline: 16px;
     margin-right: 32px;
 
-    @media (min-width: 1200px) {
+    @include layout.on-desktop {
       margin-right: 48px;
+    }
+  }
+
+  &--footer {
+    grid-column: 1/-1;
+
+    @include layout.on-tablet {
+      grid-column: span 4;
+    }
+
+    @include layout.on-desktop {
+      grid-column: span 8;
     }
   }
 

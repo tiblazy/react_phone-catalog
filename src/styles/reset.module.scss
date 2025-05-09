@@ -1,6 +1,4 @@
-*,
-*:before,
-*:after {
+* {
   box-sizing: border-box;
 }
 
@@ -59,7 +57,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   text-rendering: optimizeLegibility;
   text-decoration: none;
@@ -84,31 +81,16 @@ ul {
   list-style: none;
 }
 
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 input {
-  -webkit-appearance: none;
   border-radius: 0;
 }
 
 button {
-  -webkit-appearance: none;
   border-radius: 0;
   text-align: inherit;
   background: none;
