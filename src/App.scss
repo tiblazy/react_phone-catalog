@@ -1,1 +1,15 @@
-// not empty
+@use "./styles/reset.module";
+@use "./styles/font_face.module";
+@use "./styles/animation.module" as animated;
+@use "./components/header/Header.module";
+@use "./components/logo/Logo.module";
+@use "./components/nav-bar/NavBar.module";
+
+* {
+  font-family: Mont, sans-serif !important;
+  box-sizing: border-box;
+}
+
+.grown {
+  @include animated.underline__grown;
+}

@@ -1,7 +1,6 @@
 import './App.scss';
+import { AppRoute } from './routes/AppRoute';
 
-export const App = () => (
-  <div className="App">
-    <h1>Product Catalog</h1>
-  </div>
-);
+export const App = () => {
+  return <AppRoute />;
+};

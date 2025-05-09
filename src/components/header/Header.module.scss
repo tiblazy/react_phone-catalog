@@ -1,0 +1,62 @@
+@use "../../styles/variables.module" as variables;
+@use "../../styles/layout.module" as layout;
+@use "../../styles/animation.module" as animated;
+
+.header {
+  height: variables.$header--mobile;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid blue;
+
+  @include layout.on-desktop {
+    height: variables.$header--desktop;
+    padding-block: 18px;
+  }
+}
+
+.icon {
+  position: relative;
+  height: variables.$header--mobile;
+  aspect-ratio: 1;
+
+  @include layout.flex-center;
+  @include layout.on-desktop {
+    height: variables.$header--desktop;
+  }
+
+  &--header {
+    border-left: 1px solid red;
+  }
+
+  &--navigation {
+    display: none;
+
+    @include layout.on-tablet {
+      @include layout.flex-center;
+    }
+  }
+
+  &--menu {
+    @include layout.on-tablet {
+      display: none;
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-60%, 60%);
+    width: 14px;
+    aspect-ratio: 1/1;
+    background-color: red;
+    border-radius: 100%;
+    border: 1px solid white;
+    font-size: 9px;
+
+    @include layout.flex-center;
+    @include layout.on-desktop {
+      transform: translate(-110%, 120%);
+    }
+  }
+}

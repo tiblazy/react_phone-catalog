@@ -1,0 +1,22 @@
+$default-transition: 0.3s ease-in-out;
+
+@mixin underline__grown {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: red;
+    transition: width $default-transition;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+
+  &--active:after {
+    width: 100%;
+  }
+}

@@ -1,0 +1,46 @@
+@use "../../styles/variables.module" as variables;
+@use "../../styles/layout.module" as layout;
+@use "../../styles/animation.module" as animated;
+
+.nav-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &--space-between {
+    justify-content: space-between;
+  }
+
+  &__links {
+    display: flex;
+
+    &--header {
+      display: none;
+
+      @include layout.on-tablet {
+        @include layout.flex-center;
+
+        gap: 32px;
+      }
+
+      @include layout.on-desktop {
+        gap: 64px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    height: variables.$header--mobile;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 11px;
+    letter-spacing: 4%;
+    text-transform: uppercase;
+
+    @include layout.flex-center;
+    @include layout.on-desktop {
+      height: variables.$header--desktop;
+    }
+  }
+}
