@@ -5,10 +5,13 @@
   margin-block: 24px;
 
   @include layout.page-grid;
+
   @include layout.on-tablet {
     margin-block: 32px;
+
     @include layout.content-padding-inline;
   }
+
   @include layout.on-desktop{
     margin-block: 56px;
   }

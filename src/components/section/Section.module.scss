@@ -1,0 +1,88 @@
+@use "../../styles/layout.module" as layout;
+
+.section {
+  // &__carousel{}
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__by-category {
+    gap: 32px;
+    @include layout.content-padding-inline;
+
+    @include layout.on-tablet {
+      gap: 16px;
+    }
+  }
+
+  &__by-category-list {
+    display: flex;
+    flex-direction: column;
+
+    @include layout.page-grid;
+    @include layout.on-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__by-category-item {
+    grid-column: 1/-1;
+
+    @include layout.on-tablet {
+      grid-column: span 4;
+    }
+
+    @include layout.on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &__by-category-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+
+    &--phones {
+      background-color: #706474;
+    }
+
+    &--tablets {
+      background-color: #908c94;
+    }
+
+    &--accessories {
+      background-color: #983c5c;
+    }
+  }
+
+  &__by-category-image {
+    position: absolute;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top left;
+
+    &--phones {
+      width: 120%;
+      bottom: -20%;
+      right: -25%;
+    }
+
+    &--tablets {
+      width: 130%;
+      bottom: -37%;
+      right: -40%;
+    }
+
+    &--accessories {
+      width: 120%;
+      bottom: -32%;
+      right: -30%;
+    }
+  }
+
+  &__by-category-detail {
+    margin-top: 24px;
+  }
+}

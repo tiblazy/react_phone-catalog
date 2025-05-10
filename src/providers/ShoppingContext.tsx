@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import { ProductDto } from '../dtos/ProductDto';
+import { useProductsContext } from '../hooks/useProductsContext';
 
 type Props = {
   favorites: ProductDto[];
@@ -21,8 +22,6 @@ export const ShoppingProvider = ({ children }: { children: ReactNode }) => {
   });
   const [itemsOnCart, setItemsOnCart] = useState<ProductDto[]>(() => {
     const storedItemsOnCart = localStorage.getItem('#mate--catalog-phone!cart');
-
-    // console.log(JSON.parse(storedItemsOnCart));
 
     return storedItemsOnCart ? JSON.parse(storedItemsOnCart) : 0;
   });
