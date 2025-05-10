@@ -2,13 +2,15 @@
 @use "../../styles/layout.module" as layout;
 
 .hero {
+  margin-block: 24px;
+
   @include layout.page-grid;
-
   @include layout.on-tablet {
-  }
-
-  @include layout.on-tablet {
+    margin-block: 32px;
     @include layout.content-padding-inline;
+  }
+  @include layout.on-desktop{
+    margin-block: 56px;
   }
 
   &__container {
@@ -30,15 +32,27 @@
 
   &__carousel {
     grid-column: 1/-1;
-    width: 100%;
-    aspect-ratio: 1/1;
-    background-color: peru;
 
     @include layout.on-tablet {
       grid-column: 2/-2;
-      height: 150px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    cursor: pointer;
+
+    @include layout.on-tablet {
       aspect-ratio: auto;
     }
+  }
+
+  &__banner {
+    width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   &__bullets {

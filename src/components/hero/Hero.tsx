@@ -4,18 +4,16 @@ import SwiperCore from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PaginationOptions, Swiper as SwiperClass } from 'swiper/types';
-import { ProductDto } from '../../dtos/ProductDto';
-import { useProductsContext } from '../../hooks/useProductsContext';
+import { useWindowContext } from '../../hooks/useWindowContext';
 import { SwiperNavigationButton } from '../swiper-navigation-button';
+import { Typography } from '../typography';
 
 export const Hero = () => {
-  const { products } = useProductsContext();
+  const { windowWidth } = useWindowContext();
   const swiperRef = useRef<SwiperCore | null>(null);
   const swiperPaginationRef = useRef<HTMLDivElement | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-
-  const tempProd = products.slice(0, 3);
 
   const updateSwiperState = (swiperInstance: SwiperClass) => {
     swiperRef.current = swiperInstance;
@@ -32,6 +30,11 @@ export const Hero = () => {
     }
 
     const paginationEl = swiperPaginationRef.current;
+    const current = swiperInstance.realIndex;
+    const total = swiperInstance.slides.length;
+
+    const bulletPosition =
+      current === 0 ? 'start' : current === total - 1 ? 'end' : 'middle';
 
     if (
       paginationEl &&
@@ -48,11 +51,27 @@ export const Hero = () => {
       swiperInstance.pagination.init();
       swiperInstance.pagination.render();
       swiperInstance.pagination.update();
+
+      if (bulletPosition === 'start') {
+        setIsEnd(false);
+        setIsBeginning(true);
+      }
+
+      if (bulletPosition === 'end') {
+        setIsBeginning(false);
+        setIsEnd(true);
+      }
     }
   };
 
+  const heroImages = Array(3).fill({
+    square: '/img/hero-square.png',
+    banner: '/img/hero-banner.png',
+  });
+
   return (
     <div className="hero">
+      <Typography modifier="h1" message="Welcome to Nice Gadgets store!" />
       <div className="hero__container">
         <div className="hero__buttons">
           <SwiperNavigationButton
@@ -72,9 +91,13 @@ export const Hero = () => {
               clickable: true,
             }}
           >
-            {tempProd.map((temP: ProductDto) => (
-              <SwiperSlide className="hero__item" key={temP.id}>
-                <div className="card">{temP.name}</div>
+            {heroImages.map((heroImage, index) => (
+              <SwiperSlide className="hero__item" key={index}>
+                <img
+                  className="hero__banner"
+                  src={windowWidth < 640 ? heroImage.square : heroImage.banner}
+                  alt="banner"
+                />
               </SwiperSlide>
             ))}
           </Swiper>

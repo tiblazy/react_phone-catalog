@@ -22,8 +22,8 @@
   }
 
   &--disabled {
-    color: var(--swiper-navigation--disabled);
-    background-color: var(--swiper-navigation-background--disabled);
-    border: 1px solid var(--swiper-navigation--disabled);
+    color: var(--swiper-navigation-disabled);
+    background-color: var(--swiper-navigation-background-disabled);
+    border: 1px solid var(--swiper-navigation-disabled);
   }
 }

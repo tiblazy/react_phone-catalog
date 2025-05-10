@@ -22,10 +22,11 @@
   --swiper-navigation-color: var(--color-primary);
   --swiper-navigation-background: var(--color-white);
   --swiper-navigation-border-color: var(--color-icons);
-  --swiper-navigation-background--disabled: transparent;
-  --swiper-navigation--disabled: var(--color-elements);
+  --swiper-navigation-background-disabled: transparent;
+  --swiper-navigation-disabled: var(--color-elements);
   --swiper-bullet-color: var(--color-icons);
   --swiper-bullet-active-color: var(--color-primary);
+  --typo-h1-color: var(--color-primary);
 }
 
 :root[data-theme="dark"] {
@@ -53,8 +54,9 @@
   --swiper-navigation-color: var(--color-white);
   --swiper-navigation-background: var(--color-surface-2);
   --swiper-navigation-border-color: var(--color-surface-2);
-  --swiper-navigation--disabled: var(--color-elements);
-  --swiper-navigation-background--disabled: transparent;
+  --swiper-navigation-disabled: var(--color-elements);
+  --swiper-navigation-background-disabled: transparent;
   --swiper-bullet-color: var(--color-elements);
   --swiper-bullet-active-color: var(--color-white);
+  --typo-h1-color:var(--color-white);
 }

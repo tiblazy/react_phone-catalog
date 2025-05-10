@@ -27,6 +27,14 @@ export const ShoppingProvider = ({ children }: { children: ReactNode }) => {
     return storedItemsOnCart ? JSON.parse(storedItemsOnCart) : 0;
   });
 
+  // const { products } = useProductsContext();
+  // const handleErrorCommit = () => {
+  //   setFavorites([...favorites, products[0]]);
+  //   setItemsOnCart([...itemsOnCart, products[0]]);
+  // };
+
+  // handleErrorCommit();
+
   useEffect(() => {
     localStorage.setItem(
       '#mate--catalog-phone!favorites',
