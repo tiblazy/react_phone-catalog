@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { useQuery } from '@tanstack/react-query';
 import { createContext, ReactNode, useState } from 'react';
 import { apiProducts } from '../api/productsApi';

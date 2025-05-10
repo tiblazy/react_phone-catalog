@@ -4,7 +4,6 @@
 
 .icon {
   position: relative;
-  aspect-ratio: 1;
   color: var(--icon-primary-color);
 
   @include layout.flex-center;
@@ -12,29 +11,31 @@
   &--header {
     height: variables.$header--mobile;
     border-left: 1px solid var(--header-icon-border);
+    aspect-ratio: 1/1;
 
     @include layout.on-desktop {
       height: variables.$header--desktop;
     }
-  }
 
-  &--navigation {
-    display: none;
-
-    @include layout.on-tablet {
-      @include layout.flex-center;
-    }
-  }
-
-  &--menu {
-    @include layout.on-tablet {
+    &-navigation {
       display: none;
+
+      @include layout.on-tablet {
+        @include layout.flex-center;
+      }
+    }
+
+    &-menu {
+      @include layout.on-tablet {
+        display: none;
+      }
     }
   }
 
   &--footer {
     height: 32px;
     background-color: var(--footer-icon-background);
+    aspect-ratio: 1/1;
     border: 1px solid var(--footer-icon-border);
 
     &:hover {
@@ -44,11 +45,13 @@
     }
   }
 
+  &--menu {
+    height: variables.$menu--icons;
+    width: 100%;
+  }
+
   &__counter {
     position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-60%, 60%);
     width: 14px;
     aspect-ratio: 1/1;
     color: var(--color-white);
@@ -59,8 +62,18 @@
 
     @include layout.flex-center;
 
-    @include layout.on-desktop {
-      transform: translate(-110%, 120%);
+    &--header {
+      top: 0;
+      right: 0;
+      transform: translate(-60%, 60%);
+
+      @include layout.on-desktop {
+        transform: translate(-110%, 120%);
+      }
+    }
+
+    &--menu {
+      transform: translate(50%, -50%);
     }
   }
 }

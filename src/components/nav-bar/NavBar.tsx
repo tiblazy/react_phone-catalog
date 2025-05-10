@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useMenuContext } from '../../hooks/useMenuContext';
 
 export type Item = { name: string; route: string };
 
@@ -13,6 +14,8 @@ export const NavBar = ({
   element = 'link',
   modifier = 'header',
 }: Props) => {
+  const { handleShownMenuState } = useMenuContext();
+
   return (
     <ul className={`nav-bar__${element}s nav-bar__${element}s--${modifier}`}>
       {items.map((item: Item) => (
@@ -20,6 +23,7 @@ export const NavBar = ({
           {
             <NavLink
               to={item.route}
+              onClick={modifier === 'menu' ? handleShownMenuState : undefined}
               className={({ isActive }) =>
                 isActive
                   ? `nav-bar__${element} nav-bar__${element}--${modifier} nav-bar__${element}--selected grown grown--active`

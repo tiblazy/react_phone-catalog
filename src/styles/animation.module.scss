@@ -1,3 +1,5 @@
+@use "./variables.module" as variables;
+
 $default-transition: 0.3s ease-in-out;
 
 @mixin underline-grown {
@@ -32,4 +34,17 @@ $default-transition: 0.3s ease-in-out;
 
 @mixin move-up {
   animation: slide-up 0.5s infinite ease-in-out forwards;
+}
+
+@keyframes menu-slide-up {
+  from {
+    transform: translateY(variables.$menu--icons);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@mixin menu-move-up {
+  animation: menu-slide-up 0.3s ease-in forwards;
 }

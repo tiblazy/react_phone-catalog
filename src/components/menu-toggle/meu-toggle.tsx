@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { IoClose, IoMenu } from 'react-icons/io5';
 import { useMenuContext } from '../../hooks/useMenuContext';
 
@@ -7,7 +7,7 @@ export const MenuToggle = () => {
 
   return (
     <button
-      className="icon icon--header icon--menu"
+      className="icon icon--header icon--header-menu"
       onClick={handleShownMenuState}
     >
       {shownMenuState ? <IoClose /> : <IoMenu />}

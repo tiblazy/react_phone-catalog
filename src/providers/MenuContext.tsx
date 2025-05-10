@@ -2,7 +2,7 @@ import { createContext, ReactNode, useState } from 'react';
 
 type Props = {
   shownMenuState: boolean;
-  handleShownMenuState: (shownMenuState: boolean) => void;
+  handleShownMenuState: () => void;
 };
 
 export const MenuContext = createContext<Props>({

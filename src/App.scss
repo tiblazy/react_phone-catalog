@@ -6,7 +6,8 @@
 @use "./components/logo/Logo.module";
 @use "./components/nav-bar/NavBar.module";
 @use "./components/footer/Footer.module";
-@use "./components/icon/Icon.module";
+@use "./components/icons/Icon.module";
+@use "./components/menu/Menu.module";
 
 * {
   font-family: Mont, sans-serif !important;

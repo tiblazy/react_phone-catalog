@@ -1,0 +1,37 @@
+@use "../../styles/variables.module" as variables;
+@use "../../styles/layout.module" as layout;
+@use "../../styles/animation.module.scss" as animated;
+
+.menu {
+  position: absolute;
+  background-color: var(--background-color);
+  top: calc(variables.$header--mobile + 1px);
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - (variables.$header--mobile + 1px));
+
+  @include layout.on-tablet {
+    display: none;
+  }
+
+  &__container {
+    position: relative;
+    height: calc(100% - 24px);
+    width: 100%;
+  }
+
+  &__icons {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+  }
+
+  &__icon {
+    flex: 1;
+    border: 1px solid var(--header-icon-border);
+
+    @include layout.flex-center;
+    @include animated.menu-move-up;
+  }
+}

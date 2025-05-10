@@ -1,6 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import { MouseEventHandler } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { FaAngleUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Logo } from '../logo';
@@ -39,7 +38,9 @@ export const Footer = () => {
                 to={`${link.to}`}
                 target="_blank"
                 onClick={
-                  link.to === 'under-maintenance' && handleUnderMaintenance
+                  link.to === 'under-maintenance'
+                    ? handleUnderMaintenance
+                    : undefined
                 }
               >
                 {link.name}

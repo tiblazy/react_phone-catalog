@@ -33,13 +33,14 @@
 
 @mixin page-grid {
   --columns: 4;
+
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  column-gap: 16px;
-  row-gap: 32px;
+  gap: 32px 16px;
 
   @include on-tablet {
     --columns: 12;
+
     gap: 24px;
   }
 

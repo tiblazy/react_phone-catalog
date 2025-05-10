@@ -5,10 +5,9 @@
   --color-elements: #e2e6e9;
   --color-hover: #fafbfc;
   --color-shadow: #172031;
-  --color-white: #ffffff;
+  --color-white: #fff;
   --color-green: #27ae60;
   --color-red: #eb5757;
-
   --background-color: var(--color-white);
   --common-shadow: var(--color-elements);
   --header-icon-border: var(--color-elements);
@@ -20,7 +19,6 @@
   --footer-icon-background: var(--color-white);
   --footer-icon-border: var(--color-icons);
   --counter-border: var(--color-white);
-  --link-footer: var(--color-secondary);
 }
 
 :root[data-theme="dark"] {
@@ -34,14 +32,12 @@
   --color-accent: #985cfc;
   --color-hover: #a378ff;
   --color-bg: #101424;
-
   --background-color: var(--color-black);
   --common-shadow: var(--color-surface-2);
   --header-icon-border: var(--color-surface-2);
   --icon-primary-color: var(--color-white);
   --link-active-color: var(--color-white);
   --link-secondary-color: var(--color-secondary);
-  --link-footer: var(--color-white);
   --footer-message: var(--color-secondary);
   --footer-icon-background: var(--color-surface-2);
   --footer-icon-border: var(--color-surface-2);
