@@ -36,15 +36,15 @@
 
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  gap: 32px 16px;
+  gap: 16px;
 
   @include on-tablet {
     --columns: 12;
-
-    gap: 24px;
   }
 
   @include on-desktop {
     --columns: 24;
+
+    gap: 24px;
   }
 }

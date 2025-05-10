@@ -3,16 +3,18 @@ import { FiShoppingBag } from 'react-icons/fi';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import { useMenuContext } from '../../hooks/useMenuContext';
+import { useShoppingContext } from '../../hooks/useShoppingContext';
 
 type Props = { block?: string; modifier?: string };
 
 export const NavIcon = ({ block, modifier }: Props) => {
   const { handleShownMenuState } = useMenuContext();
+  const { favorites, itemsOnCart } = useShoppingContext();
+
   const links = [
     { icon: <MdFavoriteBorder />, route: 'favorites' },
     { icon: <FiShoppingBag />, route: 'bag' },
   ];
-  const counter = 3;
 
   return links.map(link => (
     <li className={`${block}__icon`} key={link.route}>
@@ -26,8 +28,16 @@ export const NavIcon = ({ block, modifier }: Props) => {
         onClick={modifier === 'menu' ? handleShownMenuState : undefined}
       >
         {link.icon}
-        {counter > 0 && (
-          <span className={`icon__counter icon__counter--${modifier}`}>10</span>
+        {favorites > 0 && link.route === 'favorites' && (
+          <span className={`icon__counter icon__counter--${modifier}`}>
+            {favorites}
+          </span>
+        )}
+
+        {itemsOnCart > 0 && link.route === 'bag' && (
+          <span className={`icon__counter icon__counter--${modifier}`}>
+            {itemsOnCart}
+          </span>
         )}
       </NavLink>
     </li>

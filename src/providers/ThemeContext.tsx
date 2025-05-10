@@ -14,7 +14,7 @@ export const ThemeContext = createContext<Props>({
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<ThemeOptions>(() => {
     const currTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const storedTheme = localStorage.getItem('#mate--catalog-phone');
+    const storedTheme = localStorage.getItem('#mate--catalog-phone!theme');
 
     return storedTheme
       ? (storedTheme as ThemeOptions)
@@ -24,12 +24,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem('#mate--catalog-phone', theme);
+    localStorage.setItem('#mate--catalog-phone!theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   const handleToggleTheme = () => {
-    localStorage.setItem('#mate--catalog-phone', theme);
+    localStorage.setItem('#mate--catalog-phone!theme', theme);
 
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
 
