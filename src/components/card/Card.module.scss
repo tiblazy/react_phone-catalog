@@ -1,0 +1,139 @@
+@use "../../styles/layout.module" as layout;
+
+.card {
+  width: 273px;
+  // max-width: 320px;
+  padding: 32px;
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include layout.on-tablet {
+    grid-column: span 5;
+  }
+
+  @include layout.on-desktop {
+    grid-column: span 6;
+  }
+
+  &__image-container {
+    height: 263px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 100%;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    height: 46px;
+  }
+
+  &__prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__price {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: var(--color-price);
+
+    &--line-through {
+      color: var(--color-through);
+      text-decoration: line-through;
+    }
+  }
+
+  &__divider {
+    color: var(--card-divider);
+  }
+
+  &__specs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__spec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+
+    &--field {
+      color: var(--card-field);
+    }
+
+    &--data {
+      color: var(--card-data) !important;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--add {
+      flex: 1;
+      color: var(--card-button-accent);
+      background-color: var(--card-button-add-background);
+    }
+
+    &--added {
+      flex: 1;
+      color: var(--card-button-added);
+      background-color: var(--card-button-added-background);
+      border: 1px solid var(--card-button-added-border);
+    }
+
+    &--fav {
+      width: 40px;
+      aspect-ratio: 1/1;
+      color: var(--card-button-fav);
+      background-color: var(--card-button-fav-background);
+      border: 1px solid var(--card-button-fav-border);
+    }
+
+    &--faved {
+      width: 40px;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--card-button-faved);
+      background-color: var(--card-button-faved-background);
+      border: 1px solid var(--card-button-faved-border);
+    }
+  }
+}

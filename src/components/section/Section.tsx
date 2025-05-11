@@ -1,17 +1,14 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { ReactNode } from 'react';
-import { Typography } from '../typography';
 
 type Props = {
-  title: string;
+  title?: string;
   children: ReactNode;
   modifier?: string;
 };
 
-export const Section = ({ title, modifier, children }: Props) => {
+export const Section = ({ modifier, children }: Props) => {
   return (
-    <section className={`section--${modifier}`}>
-      <Typography modifier="h2" message={title} />
-      {children}
-    </section>
+    <section className={`section section--${modifier}`}>{children}</section>
   );
 };

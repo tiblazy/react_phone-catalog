@@ -22,6 +22,7 @@ export const SwiperNavigationButton = ({
     if (!swiperRef.current) {
       return;
     }
+    console.log('click');
 
     return navTo === 'prev'
       ? swiperRef.current.slidePrev()

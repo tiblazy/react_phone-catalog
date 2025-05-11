@@ -29,8 +29,24 @@
   --typo-h1-color: var(--color-primary);
   --typo-h2-color: var(--color-primary);
   --typo-h4-color: var(--color-primary);
-  --typo-body-color:var(--color-secondary)
-
+  --typo-body-color: var(--color-secondary);
+  --card-border: var(--color-elements);
+  --typo-card-color: var(--color-primary);
+  --card-field: var(--color-secondary); //
+  --card-data: var(--color-primary);
+  --card-button-accent: var(--color-white);
+  --card-button-add-background: var(--color-primary);
+  --card-button-add-border: var(--color-primary);
+  --card-button-added: var(--color-green);
+  --card-button-added-background: transparent;
+  --card-button-added-border: var(--color-elements);
+  --card-button-fav-background: transparent;
+  --card-button-fav-border: var(--color-elements);
+  --card-button-faved: var(--color-red);
+  --card-button-faved-background: transparent;
+  --card-button-faved-border: var(--color-icons);
+  --color-price: var(--color-primary);
+  --color-through: var(--color-secondary);
 }
 
 :root[data-theme="dark"] {
@@ -62,9 +78,25 @@
   --swiper-navigation-background-disabled: transparent;
   --swiper-bullet-color: var(--color-elements);
   --swiper-bullet-active-color: var(--color-white);
-  --typo-h1-color:var(--color-white);
+  --typo-h1-color: var(--color-white);
   --typo-h2-color: var(--color-white);
   --typo-h4-color: var(--color-white);
-  --typo-body-color:var(--color-secondary);
-
+  --typo-body-color: var(--color-secondary);
+  --card-border: transparent;
+  --card-background: var(--color-surface);
+  --typo-card-color: var(--color-white);
+  --card-field: var(--color-secondary);
+  --card-data: var(--color-white);
+  --card-button-accent: var(--color-white);
+  --card-button-add-background: var(--color-accent);
+  --card-button-added: var(--color-white);
+  --card-button-added-background: var(--color-surface-2);
+  --card-button-fav: var(--color-white);
+  --card-button-fav-background: var(--color-surface-2);
+  --card-button-fav-border: transparent;
+  --card-button-faved: var(--color-red);
+  --card-button-faved-background: transparent;
+  --card-button-faved-border: var(--color-elements);
+  --color-price: var(--color-white);
+  --color-through: var(--color-secondary);
 }

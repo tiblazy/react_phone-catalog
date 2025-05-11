@@ -28,15 +28,15 @@ export const NavIcon = ({ block, modifier }: Props) => {
         onClick={modifier === 'menu' ? handleShownMenuState : undefined}
       >
         {link.icon}
-        {favorites > 0 && link.route === 'favorites' && (
+        {favorites.length > 0 && link.route === 'favorites' && (
           <span className={`icon__counter icon__counter--${modifier}`}>
-            {favorites}
+            {favorites.length}
           </span>
         )}
 
-        {itemsOnCart > 0 && link.route === 'bag' && (
+        {itemsOnCart.length > 0 && link.route === 'bag' && (
           <span className={`icon__counter icon__counter--${modifier}`}>
-            {itemsOnCart}
+            {itemsOnCart.length}
           </span>
         )}
       </NavLink>

@@ -10,15 +10,19 @@
   background-color: var(--swiper-navigation-background);
   border: 1px solid var(--swiper-navigation-border-color);
 
-
-  &--hero{
-    @include layout.on-tablet{
-      width: 40%;
+  &--hero {
+    @include layout.on-tablet {
+      // width: 40%;
     }
 
-    @include layout.on-desktop{
+    @include layout.on-desktop {
       width: 100%;
     }
+  }
+
+  &--section {
+    width: 32px;
+    aspect-ratio: 1/1;
   }
 
   &--disabled {
