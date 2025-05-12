@@ -2,7 +2,7 @@
 
 .card {
   width: 273px;
-  // max-width: 320px;
+  max-width: 320px;
   padding: 32px;
   background-color: var(--card-background);
   border: 1px solid var(--card-border);
@@ -20,7 +20,7 @@
   }
 
   &__image-container {
-    height: 263px;
+    height: 233px;
     display: flex;
     align-items: center;
     justify-content: center;

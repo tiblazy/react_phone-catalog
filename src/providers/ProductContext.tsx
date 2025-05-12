@@ -10,6 +10,7 @@ type Props = {
     data: ProductDto[] | undefined;
     isLoading: boolean;
     isError: boolean;
+    isSuccess: boolean;
   };
   productsByCategory: (category: string) => void;
 };
@@ -20,6 +21,7 @@ export const ProductContext = createContext<Props>({
     data: [],
     isLoading: false,
     isError: false,
+    isSuccess: false,
   },
   productsByCategory: () => {},
 });

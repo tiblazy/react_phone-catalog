@@ -32,7 +32,7 @@
   --typo-body-color: var(--color-secondary);
   --card-border: var(--color-elements);
   --typo-card-color: var(--color-primary);
-  --card-field: var(--color-secondary); //
+  --card-field: var(--color-secondary);
   --card-data: var(--color-primary);
   --card-button-accent: var(--color-white);
   --card-button-add-background: var(--color-primary);
@@ -47,6 +47,7 @@
   --card-button-faved-border: var(--color-icons);
   --color-price: var(--color-primary);
   --color-through: var(--color-secondary);
+  --spinner: var(--color-primary);
 }
 
 :root[data-theme="dark"] {
@@ -99,4 +100,5 @@
   --card-button-faved-border: var(--color-elements);
   --color-price: var(--color-white);
   --color-through: var(--color-secondary);
+  --spinner: var(--color-white);
 }

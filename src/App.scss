@@ -1,6 +1,8 @@
 @use "./styles/reset.module";
 @use "./styles/root.module";
 @use "./styles/font_face.module";
+@use "./styles/variables.module" as variables;
+@use "./styles/layout.module" as layout;
 @use "./styles/animation.module" as animated;
 @use "./components/header/Header.module";
 @use "./components/logo/Logo.module";
@@ -13,6 +15,7 @@
 @use "./components/typography/Typography.module";
 @use "./components/swiper-navigation-button/SwiperNavigationButton.module";
 @use "./components/card/Card.module";
+@use "./components/spinner/Spinner.module";
 
 * {
   font-family: Mont, sans-serif !important;
@@ -43,4 +46,45 @@ body {
 
 .swiper-pagination-bullet-active {
   background-color: var(--swiper-bullet-active-color);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-banner--wrapper {
+  grid-column: 1/-1;
+  width: 100vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+
+  @include layout.on-tablet {
+    width: calc(100vw - 32px);
+    aspect-ratio: 16/9;
+
+    @include layout.content-padding-inline;
+  }
+}
+
+.page-spinner {
+  height: calc(100vh - (variables.$header--mobile + 225px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include layout.on-tablet{
+    height: calc(100vh - (variables.$header--mobile + 96px));
+  }
+
+  @include layout.on-desktop{
+    @include layout.on-tablet{
+      height: calc(100vh - (variables.$header--desktop + 96px));
+    }
+  }
 }
