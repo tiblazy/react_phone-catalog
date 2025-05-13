@@ -7,7 +7,7 @@ import { Item, NavBar } from '../nav-bar';
 import { ThemeToggle } from '../theme-toggle';
 
 export const Header = () => {
-  const { products, productsQuery } = useProductsContext();
+  const { products } = useProductsContext();
   const categories = getCategories(products);
   const appLinks: Item[] = [{ name: 'home', route: '/' }, ...categories];
 

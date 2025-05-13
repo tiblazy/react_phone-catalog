@@ -1,0 +1,38 @@
+@use "../../styles/layout.module" as layout;
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  @include layout.on-desktop {
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb,
+  &__icon,
+  &__param {
+    color: var(--breadcrumb-color);
+  }
+
+  &__item {
+    @include layout.flex-center;
+    gap: 8px;
+  }
+
+  &__divider {
+    color: var(--breadcrumb-color-secondary);
+  }
+
+  &__param {
+    &--curr {
+      color: var(--breadcrumb-color-secondary);
+    }
+  }
+}

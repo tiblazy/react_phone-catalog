@@ -16,6 +16,9 @@
 @use "./components/swiper-navigation-button/SwiperNavigationButton.module";
 @use "./components/card/Card.module";
 @use "./components/spinner/Spinner.module";
+@use "./components/breadcrumb/Breadcrumb.module";
+@use "./components/pagination/Pagination.module";
+@use "./components/category/Category.module";
 
 * {
   font-family: Mont, sans-serif !important;
@@ -78,13 +81,25 @@ body {
   align-items: center;
   justify-content: center;
 
-  @include layout.on-tablet{
+  @include layout.on-tablet {
     height: calc(100vh - (variables.$header--mobile + 96px));
   }
 
-  @include layout.on-desktop{
-    @include layout.on-tablet{
+  @include layout.on-desktop {
+    @include layout.on-tablet {
       height: calc(100vh - (variables.$header--desktop + 96px));
     }
   }
+}
+
+.page-wrapper {
+  @include layout.content-padding-inline;
+}
+
+.outlet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+
 }

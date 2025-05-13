@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import { ProductDto } from '../../dtos/ProductDto';
 import { useShoppingContext } from '../../hooks/useShoppingContext';
 import { Typography } from '../typography';
@@ -14,7 +15,7 @@ export const Card = ({ item, showFullPrice = false }: Props) => {
     useShoppingContext();
 
   return (
-    <div className="card">
+    <Link to={`/${item.category}/${item.name}`} className="card">
       <div className="card__image-container">
         <img className="card__image" src={item.image} alt={item.name} />
       </div>
@@ -79,6 +80,6 @@ export const Card = ({ item, showFullPrice = false }: Props) => {
           )}
         </button>
       </div>
-    </div>
+    </Link>
   );
 };

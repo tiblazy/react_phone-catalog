@@ -4,7 +4,7 @@ import { NavIcon } from '../icons';
 import { Item, NavBar } from '../nav-bar';
 
 export const Menu = () => {
-  const { products, productsQuery } = useProductsContext();
+  const { products } = useProductsContext();
   const categories = getCategories(products);
   const appLinks: Item[] = [{ name: 'home', route: '/' }, ...categories];
 

@@ -48,6 +48,8 @@
   --color-price: var(--color-primary);
   --color-through: var(--color-secondary);
   --spinner: var(--color-primary);
+  --breadcrumb-color: var(--color-primary);
+  --breadcrumb-color-secondary: var(--color-secondary);
 }
 
 :root[data-theme="dark"] {
@@ -101,4 +103,6 @@
   --color-price: var(--color-white);
   --color-through: var(--color-secondary);
   --spinner: var(--color-white);
+  --breadcrumb-color: var(--color-white);
+  --breadcrumb-color-secondary: var(--color-secondary);
 }
