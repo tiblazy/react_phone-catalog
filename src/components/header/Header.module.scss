@@ -1,0 +1,29 @@
+@use "../../styles/layout.module" as layout;
+@use "../../styles/variables.module" as variables;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  height: variables.$header--mobile;
+  box-shadow: 0px 1px 0px 0px var(--header-shadow);
+
+  @include layout.on-tablet {
+  }
+
+  @include layout.on-desktop {
+    height: variables.$header--desktop;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 100%;
+
+    @include layout.on-desktop {
+      gap: 36px;
+    }
+  }
+ }

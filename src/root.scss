@@ -1,0 +1,28 @@
+:root {
+  --color-primary: #313237;
+  --color-secondary: #89939a;
+  --color-icons: #b4bdc3;
+  --color-elements: #e2e6e9;
+  --color-hover: #fafbfc;
+  --color-shadow: #172031;
+  --color-white: #fff;
+  --color-green: #27ae60;
+  --color-red: #eb5757;
+  --background-color: var(--color-white);
+  --header-shadow: var(--color-elements);
+  --footer-shadow: var(--color-elements);
+  --link-item-color: var(--color-secondary);
+  --link-item-active-color: var(--color-primary);
+  --product-card-border-color: var(--color-elements);
+  --product-card-primary-color: var(--color-primary);
+  --product-card-secondary-color: var(--color-secondary);
+  --product-card-divider-color: var(--color-elements);
+  --product-card-button-add-text-color: var(--color-white);
+  --product-card-button-add-background-color: var(--color-primary);
+  --product-card-button-add-border-color: var(--color-primary);
+  --product-card-button-fav-text-color: var(--color-primary);
+  --product-card-button-fav-background-color: var(--color-white);
+  --product-card-button-fav-border-color: var(--color-icons);
+}
+
+// :root[data-theme='dark']{}

@@ -1,0 +1,28 @@
+.logo {
+  width: fit-content;
+  cursor: pointer;
+
+  &__image {
+    &--header {
+      &-mobile {
+        height: 21px;
+      }
+
+      &-tablet {
+        height: 22px;
+      }
+
+      &-desktop {
+        height: 28px;
+      }
+    }
+
+    &--footer {
+      &-mobile,
+      &-tablet,
+      &-desktop {
+        height: 32px;
+      }
+    }
+  }
+}

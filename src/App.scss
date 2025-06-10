@@ -1,1 +1,17 @@
-// not empty
+@use "./styles/reset.module";
+@use "./root.scss";
+@use "./styles/font-face.module";
+@use "./components/header/Header.module";
+@use "./components/footer/Footer.module";
+@use "./components/logo/Logo.module";
+@use "./components/product-card/ProductCard.module";
+@use "./components/list-item/ListItem.module";
+
+* {
+  font-family: Mont, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+}

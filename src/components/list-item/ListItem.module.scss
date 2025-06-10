@@ -1,0 +1,68 @@
+@use "../../styles/layout.module" as layout;
+
+.list-item {
+  &--header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 100%;
+
+    @include layout.on-desktop {
+      gap: 64px;
+    }
+  }
+
+  &--footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include layout.on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--link-item-color);
+    text-decoration: none;
+    cursor: pointer;
+
+    &--animate {
+      height: 100%;
+    }
+
+    &--active {
+      color: var(--link-item-active-color);
+    }
+
+    &--header:hover,
+    &--menu:hover {
+      color: var(--link-item-hover-color);
+    }
+
+    &--header::after,
+    &--menu::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background-color: var(--link-item-active-color);
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after,
+    &--active::after {
+      width: 100%;
+    }
+  }
+}

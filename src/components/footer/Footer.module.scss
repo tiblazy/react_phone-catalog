@@ -1,0 +1,63 @@
+@use "../../styles/layout.module" as layout;
+
+.footer {
+  padding-block: 32px;
+  box-shadow: 0px -1px 0px 0px var(--footer-shadow);
+  gap: 32px;
+  width: 100vw;
+
+  &__container {
+    @include layout.page-grid;
+    @include layout.content-padding-inline;
+  }
+
+  &__logo {
+    grid-column: 1/-1;
+
+    @include layout.on-tablet {
+      grid-column: span 4;
+    }
+
+    @include layout.on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &__links {
+    grid-column: 1/-1;
+
+    @include layout.on-tablet {
+      grid-column: span 4;
+    }
+
+    @include layout.on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &__back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--link-item-color);
+    grid-column: 2/-2;
+    place-content: center;
+
+    @include layout.on-tablet {
+      grid-column: span 4;
+      place-content: flex-end;
+    }
+
+    @include layout.on-desktop {
+      grid-column: span 8;
+    }
+  }
+
+  &__back-to-top-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-wrap: nowrap;
+  }
+}

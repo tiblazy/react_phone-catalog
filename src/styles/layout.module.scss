@@ -1,0 +1,50 @@
+@use "./variables.module" as variables;
+
+@mixin on-tablet {
+  @media (min-width: variables.$tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: variables.$desktop) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin content-padding-inline {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 24px;
+  }
+
+  @include on-desktop {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
+
+@mixin page-grid {
+  --columns: 4;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 16px;
+
+  @include on-tablet {
+    --columns: 12;
+  }
+
+  @include on-desktop {
+    --columns: 24;
+
+    gap: 24px;
+  }
+}
