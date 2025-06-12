@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client';
+import { MenuProvider } from './providers/Menu';
 import { ProductProvider } from './providers/Product';
 import { ThemeProvider } from './providers/Theme';
 import { WindowWidthProvider } from './providers/WindowWidth';
@@ -8,7 +9,9 @@ createRoot(document.getElementById('root') as HTMLElement).render(
   <WindowWidthProvider>
     <ThemeProvider>
       <ProductProvider>
-        <AppRoute />
+        <MenuProvider>
+          <AppRoute />
+        </MenuProvider>
       </ProductProvider>
     </ThemeProvider>
   </WindowWidthProvider>,

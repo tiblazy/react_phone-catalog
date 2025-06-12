@@ -3,7 +3,9 @@
 @use "./styles/font-face.module";
 @use "./components/header/Header.module";
 @use "./components/footer/Footer.module";
+@use "./components/menu/Menu.module";
 @use "./components/logo/Logo.module";
+@use "./components/icon/Icon.module";
 @use "./components/product-card/ProductCard.module";
 @use "./components/list-item/ListItem.module";
 

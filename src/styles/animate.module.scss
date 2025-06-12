@@ -1,0 +1,21 @@
+@mixin border-bottom {
+  &--animate:hover {
+    color: var(--link-item-hover-color);
+  }
+
+  &--animate::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: var(--link-item-active-color);
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after,
+  &--active::after {
+    width: 100%;
+  }
+}

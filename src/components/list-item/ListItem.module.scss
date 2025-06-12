@@ -1,4 +1,5 @@
 @use "../../styles/layout.module" as layout;
+@use "../../styles/animate.module" as animate;
 
 .list-item {
   &--header {
@@ -10,6 +11,14 @@
     @include layout.on-desktop {
       gap: 64px;
     }
+  }
+
+  &--menu {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   &--footer {
@@ -35,6 +44,10 @@
     text-decoration: none;
     cursor: pointer;
 
+    &--menu {
+      padding-bottom: 8px;
+    }
+
     &--animate {
       height: 100%;
     }
@@ -43,26 +56,6 @@
       color: var(--link-item-active-color);
     }
 
-    &--header:hover,
-    &--menu:hover {
-      color: var(--link-item-hover-color);
-    }
-
-    &--header::after,
-    &--menu::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0;
-      background-color: var(--link-item-active-color);
-      transition: width 0.3s ease-in-out;
-    }
-
-    &:hover::after,
-    &--active::after {
-      width: 100%;
-    }
+    @include animate.border-bottom;
   }
 }

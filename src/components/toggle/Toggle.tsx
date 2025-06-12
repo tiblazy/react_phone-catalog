@@ -1,14 +1,14 @@
-import { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
+import { useMenu } from '../../hooks/uesMenu';
 import { Icon } from '../icon';
 
 export const Toggle = () => {
-  const [toggleMode, setToggleMode] = useState<boolean>(false);
+  const { shownMenu, handleToggleMenu } = useMenu();
 
   return (
-    <button onClick={() => setToggleMode(!toggleMode)}>
-      {toggleMode ? (
+    <button onClick={handleToggleMenu} className="icon icon--header">
+      {shownMenu ? (
         <Icon IconElement={IoMdClose} />
       ) : (
         <Icon IconElement={GiHamburgerMenu} />
