@@ -1,6 +1,7 @@
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { ProductDTO } from '../../dtos/product-dto';
 import { useProducts } from '../../hooks/useProducts';
+import { Spec } from '../spec';
 
 type Props = {
   product: ProductDTO;
@@ -9,6 +10,12 @@ type Props = {
 export const ProductCard = ({ product }: Props) => {
   const { cart, fav, handleSetCart, handleToggleFav } = useProducts();
   const showFullPrice = true;
+
+  const specs = {
+    Screen: product.screen,
+    Capacity: product.capacity,
+    RAM: product.ram,
+  };
 
   return (
     <div className="product-card">
@@ -31,25 +38,18 @@ export const ProductCard = ({ product }: Props) => {
       <hr className="product-card__divider" />
 
       <ul className="product-card__details">
-        <li className="product-card__specs">
-          <p className="product-card__specs--title">Detail</p>
-          <p className="product-card__specs--data">detail Info</p>
-        </li>
-
-        <li className="product-card__specs">
-          <p className="product-card__specs--title">Detail</p>
-          <p className="product-card__specs--data">detail Info</p>
-        </li>
-
-        <li className="product-card__specs">
-          <p className="product-card__specs--title">Detail</p>
-          <p className="product-card__specs--data">detail Info</p>
-        </li>
+        {Object.entries(specs).map(([title, value]) => (
+          <Spec key={title} title={title} value={value} />
+        ))}
       </ul>
 
       <div className="product-card__buttons">
         <button
-          className="product-card__buttons product-card__buttons--add"
+          className={`${
+            cart && cart.find((item: ProductDTO) => item.id === product.id)
+              ? 'product-card__buttons--cart product-card__buttons--cart-added'
+              : 'product-card__buttons--cart product-card__buttons--cart-add'
+          }`}
           onClick={() => handleSetCart(product)}
         >
           {cart && cart.find((item: ProductDTO) => item.id === product.id)
@@ -61,7 +61,7 @@ export const ProductCard = ({ product }: Props) => {
           onClick={() => handleToggleFav(product)}
         >
           {fav && fav.find((item: ProductDTO) => item.id === product.id) ? (
-            <FaHeart />
+            <FaHeart className="product-card--faved-icon" />
           ) : (
             <FaRegHeart />
           )}

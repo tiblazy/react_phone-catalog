@@ -24,9 +24,7 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
       if (storedCart) {
         return JSON.parse(storedCart);
       }
-    } catch (error) {
-      console.error('Error parsing cart from localStorage:', error);
-    }
+    } catch (error) {}
 
     localStorage.setItem('mate-cart', JSON.stringify([]));
 
@@ -40,9 +38,7 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
       if (storedFav) {
         return JSON.parse(storedFav);
       }
-    } catch (error) {
-      console.error('Error parsing cart from localStorage:', error);
-    }
+    } catch (error) {}
 
     localStorage.setItem('mate-fav', JSON.stringify([]));
 
