@@ -1,13 +1,13 @@
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { ProductDTO } from '../../dtos/product-dto';
+import { useProducts } from '../../hooks/useProducts';
+
 type Props = {
-  product: {
-    image: string;
-    name: string;
-    price: number;
-    fullPrice: number;
-  };
+  product: ProductDTO;
 };
 
 export const ProductCard = ({ product }: Props) => {
+  const { cart, fav, handleSetCart, handleToggleFav } = useProducts();
   const showFullPrice = true;
 
   return (
@@ -48,11 +48,23 @@ export const ProductCard = ({ product }: Props) => {
       </ul>
 
       <div className="product-card__buttons">
-        <button className="product-card__buttons product-card__buttons--add">
-          Add to cart
+        <button
+          className="product-card__buttons product-card__buttons--add"
+          onClick={() => handleSetCart(product)}
+        >
+          {cart && cart.find((item: ProductDTO) => item.id === product.id)
+            ? 'Added'
+            : 'Add to cart'}
         </button>
-        <button className="product-card__buttons product-card__buttons--fav">
-          Fav
+        <button
+          className="product-card__buttons product-card__buttons--fav"
+          onClick={() => handleToggleFav(product)}
+        >
+          {fav && fav.find((item: ProductDTO) => item.id === product.id) ? (
+            <FaHeart />
+          ) : (
+            <FaRegHeart />
+          )}
         </button>
       </div>
     </div>
